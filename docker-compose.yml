@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+  nodejs:
+    image: esquel.azurecr.io/cronicle-server
+    build:
+      context: .
+    # volumes:
+    #   - /docker/cronicle-talend:/opt/cronicle
+    
+    environment:
+      - HOSTNAME=cronicle-server
+
+    ports:
+      - 3012:3012
+
+  # cronicle:
+  #     image: esquel.azurecr.io/esb/cronicle-talend:v0.8.3
+  #     build:
+  #       context: .
+  #     # command: ["bin/debug.sh", "--master"]
+  #     # volumes:
+  #     #   - /docker/cronicle-talend/docker/config:/opt/cronicle/conf
+  #     ports:
+  #       - 3012:3012
+
+
